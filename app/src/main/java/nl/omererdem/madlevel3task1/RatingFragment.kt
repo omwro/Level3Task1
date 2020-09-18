@@ -7,6 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.fragment_rating.*
+
+val games = listOf(
+    "Minecraft",
+    "Fortnite",
+    "Counter Strike",
+    "Rainbow 6 Siege",
+    "Among us"
+)
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -23,5 +32,10 @@ class RatingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        showRandomAssessableGame()
+    }
+
+    private fun showRandomAssessableGame() {
+        tvGame.text = games.random()
     }
 }
